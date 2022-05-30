@@ -1,0 +1,25 @@
+﻿<Window x:Class="Smart_Piggy.EditUsers"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Smart_Piggy"
+        mc:Ignorable="d"
+        Title="Edit Users" MinHeight="800" MaxHeight="800" MinWidth="900" MaxWidth="900">
+    <Window.Background>
+        <ImageBrush ImageSource="/save.jpg" Stretch="Fill" />
+    </Window.Background>
+    <Grid Margin="10,10 ,10, 10">
+        <Label Content="Edit Users" FontSize="48" FontWeight="Bold" Margin="287,14,331,653"/>
+        <Button x:Name="edit" Content="Edit" HorizontalAlignment="Left" Margin="537,130,0,0" VerticalAlignment="Top" Height="59" Width="104" FontWeight="Bold" Background="#FFF6EC3C" FontSize="24" Click="Edit_Click" />
+        <Button x:Name="delete" Content="Delete" HorizontalAlignment="Left" Margin="678,130,0,0" VerticalAlignment="Top" Height="59" Width="104" FontWeight="Bold" Background="#FFF6713C" FontSize="24" Click="Delete_Click" />
+        <Label x:Name="test" Content="To edit or delete click on user in the list then click (edit) or (delete) ..." HorizontalAlignment="Left" Margin="30,163,0,0" VerticalAlignment="Top" FontStyle="Italic" FontSize="14" Foreground="#FFC71B1B" Height="38" Width="452"/>
+        <Button x:Name="done" Content="Done" HorizontalAlignment="Left" Margin="605,212,0,0" VerticalAlignment="Top" Height="59" Width="104" FontWeight="Bold" Background="#FFE6DDD9" FontSize="24" Click="Done_Click" />
+        <Label Content="Created by Marwa  - May 2022 | www.marwa-dev.com" Width="680" FontStyle="Italic" FontWeight="Bold" FontSize="10" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="44,699,0,0"/>
+        <Label Content="Picture by Fabian Blank --Unsplash.com" FontSize="9" FontStyle="Italic" Width="181" FontWeight="Bold" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="610,668,0,0"/>
+        <ListView x:Name="displayAll" d:ItemsSource="{Binding}" Margin="63,225,581,194" />
+
+
+
+    </Grid>
+</Window>

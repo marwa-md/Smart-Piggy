@@ -1,0 +1,42 @@
+﻿<Window x:Class="Smart_Piggy.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Smart_Piggy"
+        xmlns:chartingToolkit="clr-namespace:System.Windows.Controls.DataVisualization.Charting;assembly=DotNetProjects.DataVisualization.Toolkit"
+        mc:Ignorable="d"
+         Title="DashBoard" MinHeight="800" MaxHeight ="800" MinWidth="1300" MaxWidth="1300">
+
+    <Window.Background>
+        <ImageBrush ImageSource="/save.jpg" Stretch="Fill" />
+    </Window.Background>
+    <Grid Margin="10,10,10,10">
+        <Label x:Name="greetingLabel" Content="Hello " HorizontalAlignment="Left" Margin="426,21,0,0" VerticalAlignment="Top" FontFamily="Lucida Handwriting" FontSize="48" FontStyle="Italic"/>
+        <Label x:Name="todayDate" Content="Today is" HorizontalAlignment="Left" Margin="528,115,0,0" VerticalAlignment="Top" FontFamily="Arial Black"/>
+
+        <Button x:Name="AddNewIncome" Content="+ Add Income" HorizontalAlignment="Left" Margin="53,171,0,0" VerticalAlignment="Top" Height="40" FontFamily="Simple Indust Outline" FontSize="18" Width="152" Click="AddIncome_Click" Background="White"/>
+        <Label x:Name="spentDisplay" Content="Total income :" HorizontalAlignment="Left" Margin="53,244,0,0" VerticalAlignment="Top" RenderTransformOrigin="7.118,1.916" Width="98" FontWeight="Bold"/>
+        <Button x:Name="AddExpense" Content="+ Add Expense" HorizontalAlignment="Left" Margin="260,171,0,0" VerticalAlignment="Top" Height="40" FontFamily="Simple Indust Outline" FontSize="18" Width="152" Click="AddExpense_Click" Background="White" RenderTransformOrigin="1.368,-2.179"/>
+        <Button x:Name="ViewBudget" Content="View Log" HorizontalAlignment="Left" Margin="485,171,0,0" VerticalAlignment="Top" Height="40" FontFamily="Simple Indust Outline" FontSize="18" Width="151" Background="White" Click="ViewBudget_Click"/>
+        <Button x:Name="ViewHistory" Content="Go To History" HorizontalAlignment="Left" Margin="733,171,0,0" VerticalAlignment="Top" Height="40" FontFamily="Simple Indust Outline" FontSize="18" Width="151" Click="ViewHistory_Click" Background="White"/>
+        <Label x:Name="spentDisplay_Copy" Content="You spent :" HorizontalAlignment="Left" Margin="53,276,0,0" VerticalAlignment="Top" RenderTransformOrigin="7.118,1.916" Width="75" FontWeight="Bold"/>
+        <Label x:Name="spentDisplay_Copy1" Content="Remaining :" HorizontalAlignment="Left" Margin="53,308,0,0" VerticalAlignment="Top" RenderTransformOrigin="7.118,1.916" Width="97" FontWeight="Bold"/>
+        <Label x:Name="thisMonth" Content="This month " HorizontalAlignment="Left" Margin="47,93,0,0" VerticalAlignment="Top" FontSize="22" FontWeight="Bold" RenderTransformOrigin="0.067,0.444"/>
+        <Label x:Name="displayIncome" Content="" HorizontalAlignment="Left" Margin="167,244,0,0" VerticalAlignment="Top" RenderTransformOrigin="7.118,1.916" Width="187" Foreground="#FF236D29" FontWeight="Bold"/>
+        <Label x:Name="displaySpent" Content="" HorizontalAlignment="Left" Margin="167,278,0,0" VerticalAlignment="Top" RenderTransformOrigin="7.118,1.916" Width="187" Foreground="#FFCE2121" FontWeight="Bold"/>
+        <Label x:Name="displayRemaining" Content="" HorizontalAlignment="Left" Margin="167,310,0,0" VerticalAlignment="Top" RenderTransformOrigin="7.118,1.916" Width="187" Foreground="#FF20A22A" FontWeight="Bold"/>
+
+        <chartingToolkit:Chart  Name="pieChart" Title="This Month's Spending" 
+		VerticalAlignment="Top" Margin="49,362,665,0" Height="337">
+            <chartingToolkit:PieSeries DependentValuePath="Value" 
+		IndependentValuePath="Key" ItemsSource="{Binding}" 
+		IsSelectionEnabled="False" Margin="10,10,10,10" />
+        </chartingToolkit:Chart>
+
+        <Label Content="Created by Marwa  - May 2022 | www.marwa-dev.com" HorizontalAlignment="Left" Margin="46,716,0,0" VerticalAlignment="Top" Width="680" FontStyle="Italic" FontWeight="Bold" FontSize="10"/>
+        <Label Content="Picture by Fabian Blank --Unsplash.com" HorizontalAlignment="Left" Margin="998,642,0,0" VerticalAlignment="Top" FontSize="9" FontStyle="Italic" Width="182" FontWeight="Bold"/>
+        <Button x:Name="editUsers" Content="Edit Users" HorizontalAlignment="Left" Margin="1015,113,0,0" VerticalAlignment="Top" Height="74" FontFamily="Simple Indust Outline" FontSize="24" Width="148" Click="EditUsers_Click" Background="Yellow" FontWeight="Bold" Foreground="#FF1915D2"/>
+
+    </Grid>
+</Window>

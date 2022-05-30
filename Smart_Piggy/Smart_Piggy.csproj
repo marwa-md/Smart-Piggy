@@ -1,0 +1,33 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net5.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+    <ApplicationIcon>piggy-icon.ico</ApplicationIcon>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="save.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="piggy-icon.ico" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="DotNetProjects.WpfToolkit.DataVisualization" Version="6.1.94" />
+    <PackageReference Include="EntityFramework" Version="6.4.4" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Budget_Tracker_Library\Budget_Tracker_Library.csproj" />
+    <ProjectReference Include="..\Smart_Piggy_Database\Smart_Piggy_Database.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="save.jpg" />
+  </ItemGroup>
+
+</Project>
